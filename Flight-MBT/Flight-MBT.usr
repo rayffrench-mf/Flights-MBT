@@ -18,6 +18,7 @@ Action0=Action0\Script.mts
 400-DeleteOrderNum=Action5\Script.mts
 500-TrashcanOrder=Action6\Script.mts
 300-SearchOrderNum=Action3\Script.mts
+350-ChangeOrder=Action7\Script.mts
 
 [VuserProfiles]
 Profiles=Default Profile
@@ -75,3 +76,6 @@ Action6\ObjectRepository.bdb=
 Action3\Script.mts=
 Action3\Resource.mtr=
 Action3\ObjectRepository.bdb=
+Action7\Script.mts=
+Action7\Resource.mtr=
+Action7\ObjectRepository.bdb=

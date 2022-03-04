@@ -2,10 +2,10 @@
 
 a=Parameter("FlyFrom")
 b=Parameter("FlyTo")
-c=Parameter("Date")
+c=Parameter("OrderDate") ' must use format 15-Mar-2022
 d=Parameter("ClassOfService")
 e=Parameter("Tickets")
-f=Parameter("Name")
+f=Parameter("PassengerName")
 g=Parameter("SelectedRow")
 
 WpfWindow("Micro Focus MyFlight Sample").Move 400,160 ' For better side-by-side viewing
@@ -26,3 +26,5 @@ WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderNumberLabel").Output Ch
 
 'h=Parameter("OrderNumberOut")
 'msgbox "Created order number = " & h
+Parameter("PassengerNameOut") = f
+Parameter("OrderDateOut") = c

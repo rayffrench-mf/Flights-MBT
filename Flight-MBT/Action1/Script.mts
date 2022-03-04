@@ -1,5 +1,5 @@
 ﻿'Login to the Flight GUI WPF application using the 2 passed in parameters
-'Default values: Username = John, Password = hp 
+'Default values: Username (Agent Name) = John, Password = hp 
 
 a=Parameter("Username")
 b=Parameter("Password")
