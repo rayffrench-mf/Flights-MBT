@@ -4,7 +4,9 @@ a=Parameter("OrderNumber")
 b=Parameter("OrderDate")
 c=Parameter("PassengerName")
 
-WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
+If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (5) Then @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
+	WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click
+End If
 WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER" @@ hightlight id_;_2136678120_;_script infofile_;_ZIP::ssf2.xml_;_
 
 ' Only pass in one of these three values
@@ -25,4 +27,6 @@ ElseIf c <> "" Then ' Process by Passenger Name
 	WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 End If
+
+' Flight app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available
 

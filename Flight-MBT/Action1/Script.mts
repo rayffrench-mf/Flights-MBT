@@ -12,3 +12,4 @@ WpfWindow("Micro Focus MyFlight Sample").WpfEdit("agentName").Set a @@ hightligh
 WpfWindow("Micro Focus MyFlight Sample").WpfEdit("password").Set b @@ hightlight id_;_2137164136_;_script infofile_;_ZIP::ssf3.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfButton("OK").Click @@ hightlight id_;_1950326688_;_script infofile_;_ZIP::ssf4.xml_;_
  @@ hightlight id_;_2100371504_;_script infofile_;_ZIP::ssf28.xml_;_
+ ' Flight app ends on BOOK FLIGHT screen with FIND FLIGHTS button available

@@ -28,3 +28,5 @@ WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderNumberLabel").Output Ch
 'msgbox "Created order number = " & h
 Parameter("PassengerNameOut") = f
 Parameter("OrderDateOut") = c
+
+' Flight app ends on ORDER DETAILS screen with order number showing and NEW SEARCH button available

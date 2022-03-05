@@ -1,4 +1,5 @@
-﻿' Change an existing flight according to the passed in 3 parameters 
+﻿' Change an existing flight according to the passed in 3 parameters
+' Once at least one item is changed, the Check icon (update button) is enabled as shown in orange
 
 a=Parameter("Tickets")
 b=Parameter("ClassOfService")
@@ -11,3 +12,5 @@ WpfWindow("Micro Focus MyFlight Sample").WpfEdit("passengerName").Set c @@ hight
 WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click @@ hightlight id_;_1955282448_;_script infofile_;_ZIP::ssf15.xml_;_
 
 WpfWindow("Micro Focus MyFlight Sample").WpfObject("Order 92 updated").Output CheckPoint("Order 92 updated") @@ hightlight id_;_1939452064_;_script infofile_;_ZIP::ssf19.xml_;_
+
+' Flight app ends on BOOK FLIGHT screen with FIND FLIGHTS button available
