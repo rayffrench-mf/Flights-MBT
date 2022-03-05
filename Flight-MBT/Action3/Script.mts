@@ -26,7 +26,7 @@ ElseIf c <> "" Then ' Process by Passenger Name
 	WpfWindow("Micro Focus MyFlight Sample").WpfRadioButton("byNameOrDateRadio").Set @@ hightlight id_;_2094078072_;_script infofile_;_ZIP::ssf19.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNameWatermark").Set c
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
-	WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row
+	WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row - there must be one
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 End If
 
