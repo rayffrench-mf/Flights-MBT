@@ -16,7 +16,7 @@ Action0=Action0\Script.mts
 600-Logout=Action4\Script.mts
 200-BookFlight=Action2\Script.mts
 400-DeleteOrderNum=Action5\Script.mts
-500-SearchOrderNum=Action3\Script.mts
+500-SearchOrder=Action3\Script.mts
 700-TrashcanOrder=Action6\Script.mts
 300-ChangeOrder=Action7\Script.mts
 

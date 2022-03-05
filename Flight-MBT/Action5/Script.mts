@@ -7,5 +7,5 @@ a=Parameter("OrderNumber")
 b=Parameter("PassengerName")
 c=Parameter("OrderDate")
 
-RunAction "500-SearchOrderNum", oneIteration, Parameter("OrderNumber"), Parameter("PassengerName"), Parameter("OrderDate")
+RunAction "500-SearchOrder", oneIteration, Parameter("OrderNumber"), Parameter("PassengerName"), Parameter("OrderDate")
 RunAction "700-TrashcanOrder", oneIteration

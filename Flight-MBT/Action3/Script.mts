@@ -5,30 +5,51 @@ b=Parameter("OrderDate")
 c=Parameter("PassengerName")
 
 'Get to BOOK FLIGHT and SEARCH ORDER screen if you aren't already there
-If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (5) Then @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
+If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (2) Then @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click
 End If
 
-WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER" @@ hightlight id_;_2136678120_;_script infofile_;_ZIP::ssf2.xml_;_
+WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER"
 
 ' Only pass in one of these three values - only one should be non-empty
 If a <> "" Then ' Process by Order Number
+	WpfWindow("Micro Focus MyFlight Sample").WpfRadioButton("byNameOrDateRadio").Set
+	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNameWatermark").Set " " ' Clear out field
 	WpfWindow("Micro Focus MyFlight Sample").WpfRadioButton("byNumberRadio").Set @@ hightlight id_;_2062105976_;_script infofile_;_ZIP::ssf3.xml_;_
-	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNumberWatermark").Set a @@ hightlight id_;_2136609336_;_script infofile_;_ZIP::ssf4.xml_;_
+	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNumberWatermark").Set a
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
 ElseIf b <>  "" Then ' Process by Order Date
 	WpfWindow("Micro Focus MyFlight Sample").WpfRadioButton("byNameOrDateRadio").Set
+	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNameWatermark").Set "" ' Clear out field
 	WpfWindow("Micro Focus MyFlight Sample").WpfCalendar("byDatePicker").SetDate b @@ hightlight id_;_1955569168_;_script infofile_;_ZIP::ssf15.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
-	WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row
-	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click @@ hightlight id_;_2003838088_;_script infofile_;_ZIP::ssf20.xml_;_
+	If WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount > 0 Then
+		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row
+		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
+	Else
+		Reporter.ReportEvent micFail, "Search Order", "Order(s) with Order Date " & b & " does not exist."
+		WpfWindow("Micro Focus MyFlight Sample").WpfButton("BACK").Click
+	End If
 ElseIf c <> "" Then ' Process by Passenger Name
-	WpfWindow("Micro Focus MyFlight Sample").WpfRadioButton("byNameOrDateRadio").Set @@ hightlight id_;_2094078072_;_script infofile_;_ZIP::ssf19.xml_;_
+	WpfWindow("Micro Focus MyFlight Sample").WpfRadioButton("byNameOrDateRadio").Set @@ hightlight id_;_1918806040_;_script infofile_;_ZIP::ssf30.xml_;_
+	WpfWindow("Micro Focus MyFlight Sample").WpfCalendar("byDatePicker").Type micBack
 	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNameWatermark").Set c
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
-	WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row - there must be one
-	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
+	If WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount > 0 Then
+		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row
+		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
+	Else
+		Reporter.ReportEvent micFail, "Search Order", "Order with Passenger Name containing " & c & " does not exist."
+		WpfWindow("Micro Focus MyFlight Sample").WpfButton("BACK").Click
+	End If	
 End If
 
+If WpfWindow("Micro Focus MyFlight Sample").Dialog("Error").Exist (2) Then ' This popup occurs only with non-existant order nums @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
+	WpfWindow("Micro Focus MyFlight Sample").Dialog("Error").WinButton("OK").Click
+	Reporter.ReportEvent micFail, "Search Order", "Order with Order Num " & a & " does not exist."
+End If
+ @@ hightlight id_;_853570_;_script infofile_;_ZIP::ssf24.xml_;_
 ' Flight app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available
+
+
 
