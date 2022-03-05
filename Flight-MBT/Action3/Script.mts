@@ -4,9 +4,11 @@ a=Parameter("OrderNumber")
 b=Parameter("OrderDate")
 c=Parameter("PassengerName")
 
+'Get to BOOK FLIGHT screen if you aren't already there
 If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (5) Then @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click
 End If
+
 WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER" @@ hightlight id_;_2136678120_;_script infofile_;_ZIP::ssf2.xml_;_
 
 ' Only pass in one of these three values
