@@ -1,4 +1,5 @@
 ﻿' Search for an existing order by one of three values which are passed in (only one should be non-empty)
+'This action must start on the post-login screen that shows BOOK FLIGHT and SEARCH ORDER.
 
 a=Parameter("OrderNumber")
 b=Parameter("OrderDate")
@@ -9,6 +10,7 @@ If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (2) Th
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click
 End If
 
+'Select to search for an order
 WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER"
 
 ' Only pass in one of these three values - only one should be non-empty
@@ -49,7 +51,8 @@ If WpfWindow("Micro Focus MyFlight Sample").Dialog("Error").Exist (2) Then ' Thi
 	Reporter.ReportEvent micFail, "Search Order", "Order with Order Num " & a & " does not exist."
 End If
  @@ hightlight id_;_853570_;_script infofile_;_ZIP::ssf24.xml_;_
-' Flight app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available
+' Flight GUI app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available
+' This action can then transition to either Change Order or Delete Order (or Logout).
 
 
 
