@@ -13,7 +13,7 @@ End If
 'Select to search for an order
 WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER"
 
-msgbox "Num/Date/Name = " & a & "/" & b & "/" & c
+Reporter.ReportEvent micPass, "Search Order", "Num/Date/Name = " & a & "/" & b & "/" & c
 
 ' Only pass in one of these three values - only one should be non-empty
 If a <> "" Then ' Process by Order Number
