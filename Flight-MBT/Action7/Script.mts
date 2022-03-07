@@ -11,8 +11,16 @@ WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("numOfTicketsCombo").Select
 WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("flightClassCombo").Select b @@ hightlight id_;_1955290176_;_script infofile_;_ZIP::ssf8.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfEdit("passengerName").Set c @@ hightlight id_;_1955294928_;_script infofile_;_ZIP::ssf10.xml_;_
 
-WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click @@ hightlight id_;_1955282448_;_script infofile_;_ZIP::ssf15.xml_;_
+'Make sure we change something or we can't click on the update button since it is disabled.
+If WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").GetROProperty("enabled")  = True Then
+	WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click
+Else
+	WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("numOfTicketsCombo").Select 4 ' we set to 2 so 4 should be a different value
+	WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click
+End  If
 
-WpfWindow("Micro Focus MyFlight Sample").WpfObject("Order 92 updated").Output CheckPoint("Order 92 updated") @@ hightlight id_;_1939452064_;_script infofile_;_ZIP::ssf19.xml_;_
+Wait 3
+
+WpfWindow("Micro Focus MyFlight Sample").WpfObject("Order update mesage").Output CheckPoint("Order updated") @@ hightlight id_;_1939452064_;_script infofile_;_ZIP::ssf19.xml_;_
 
 ' Flight GUI app ends on the Order Details confirmation screen showing the NEW SEARCH button.
