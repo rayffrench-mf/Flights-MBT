@@ -2,4 +2,4 @@
 RunAction "200-BookFlight", oneIteration, "London", "Paris", "15-Mar-2022", "Economy", "1", "John Unitas", "1"
 RunAction "300-ChangeOrder", oneIteration
 RunAction "400-DeleteOrderNum", oneIteration, Parameter("200-BookFlight", "OrderNumberOut"), Parameter("200-BookFlight", "PassengerNameOut"), Parameter("200-BookFlight", "OrderDateOut")
-RunAction "600-Logout", oneIteration
+RunAction "700-Logout", oneIteration

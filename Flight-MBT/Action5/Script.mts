@@ -10,6 +10,6 @@ b=Parameter("PassengerName")
 c=Parameter("OrderDate")
 
 RunAction "500-SearchOrder", oneIteration, Parameter("OrderNumber"), Parameter("PassengerName"), Parameter("OrderDate")
-RunAction "700-TrashcanOrder", oneIteration
+RunAction "600-TrashcanOrder", oneIteration
 
  'Flight GUI app ends on the Deletion confirmation screen showing BOOK FLIGHT and SEARCH ORDER.
