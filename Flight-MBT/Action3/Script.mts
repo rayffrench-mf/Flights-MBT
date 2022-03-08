@@ -27,8 +27,9 @@ ElseIf b <>  "" Then ' Process by Order Date
 	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNameWatermark").Set "" ' Clear out field
 	WpfWindow("Micro Focus MyFlight Sample").WpfCalendar("byDatePicker").SetDate b @@ hightlight id_;_1955569168_;_script infofile_;_ZIP::ssf15.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
-	If WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount > 0 Then
-		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row
+	rc = WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount
+	If rc > 0 Then
+		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow rc ' Select the last row
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order", "Order(s) with Order Date " & b & " does not exist."
@@ -39,8 +40,9 @@ ElseIf c <> "" Then ' Process by Passenger Name
 	WpfWindow("Micro Focus MyFlight Sample").WpfCalendar("byDatePicker").Type micBack
 	WpfWindow("Micro Focus MyFlight Sample").WpfEdit("byNameWatermark").Set c
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
-	If WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount > 0 Then
-		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 0 ' Select the first row
+	rc = WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount
+	If rc > 0 Then
+		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow rc ' Select the last row
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order", "Order with Passenger Name containing " & c & " does not exist."
@@ -55,6 +57,4 @@ End If
  @@ hightlight id_;_853570_;_script infofile_;_ZIP::ssf24.xml_;_
 ' Flight GUI app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available
 ' This action can then transition to either Change Order or Delete Order (or Logout).
-
-
 
