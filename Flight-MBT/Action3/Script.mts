@@ -58,8 +58,3 @@ End If
 ' Flight GUI app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available
 ' This action can then transition to either Change Order or Delete Order (or Logout).
 
-
-WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
-rc = WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount
-WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 3
-'msgbox rc
