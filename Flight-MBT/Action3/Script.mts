@@ -29,7 +29,7 @@ ElseIf b <>  "" Then ' Process by Order Date
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
 	rc = WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount
 	If rc > 0 Then
-		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow rc ' Select the last row
+		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow rc-1 ' Select the last row (zero-based)
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order", "Order(s) with Order Date " & b & " does not exist."
@@ -42,7 +42,7 @@ ElseIf c <> "" Then ' Process by Passenger Name
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
 	rc = WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount
 	If rc > 0 Then
-		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow rc ' Select the last row
+		WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow rc-1 ' Select the last row (zero-based)
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order", "Order with Passenger Name containing " & c & " does not exist."
@@ -58,3 +58,8 @@ End If
 ' Flight GUI app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available
 ' This action can then transition to either Change Order or Delete Order (or Logout).
 
+
+WpfWindow("Micro Focus MyFlight Sample").WpfButton("SEARCH").Click
+rc = WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").RowCount
+WpfWindow("Micro Focus MyFlight Sample").WpfTable("ordersDataGrid").SelectRow 3
+'msgbox rc
