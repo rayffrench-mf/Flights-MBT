@@ -9,7 +9,6 @@ e=Parameter("Tickets")
 f=Parameter("PassengerName")
 g=Parameter("SelectedRow")
 
-WpfWindow("Micro Focus MyFlight Sample").Move 390,160 ' For better side-by-side viewing
 WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("fromCity").Select a @@ hightlight id_;_2135054328_;_script infofile_;_ZIP::ssf4.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("toCity").Select b @@ hightlight id_;_1948026184_;_script infofile_;_ZIP::ssf8.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfCalendar("datePicker").SetDate c @@ hightlight id_;_2135059656_;_script infofile_;_ZIP::ssf10.xml_;_
