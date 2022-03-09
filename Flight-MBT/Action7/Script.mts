@@ -19,8 +19,10 @@ Else
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click
 End  If
 
-Wait 3
-
-WpfWindow("Micro Focus MyFlight Sample").WpfObject("Order update mesage").Output CheckPoint("Order updated") @@ hightlight id_;_1939452064_;_script infofile_;_ZIP::ssf19.xml_;_
+Wait 2 ' The Exist statement below seems to find a little box that exists if we run too fast - so the Wait is necessary
+' Wait for Update message to appear (about 3-4 seconds)
+If WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderUpdatedMessage").Exist (4) Then
+	WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderUpdatedMessage").Output CheckPoint("OrderUpdatedNumber") @@ hightlight id_;_1939452064_;_script infofile_;_ZIP::ssf19.xml_;_
+End  If
 
 ' Flight GUI app ends on the Order Details confirmation screen showing the NEW SEARCH button.
