@@ -1,6 +1,13 @@
 ﻿' Click the Trashcan icon to delete whatever order has been selected
 'This action must start after a Search Order has been completed.
+'This action needs to start on the ORDER DETAILS screen
 
+' If we're on the BOOK FLIGHT SEARCH ORDER screen then we failed previously so exit
+If WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Exist Then @@ hightlight id_;_1906124760_;_script infofile_;_ZIP::ssf6.xml_;_
+	ExitAction
+End  If
+
+'If the Trashcan icon is not enabled then exit
 If WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").GetROProperties("enabled")  Then @@ hightlight id_;_2058186184_;_script infofile_;_ZIP::ssf1.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").Click
 	WpfWindow("Micro Focus MyFlight Sample").Dialog("Notification").WinButton("Yes").Click @@ hightlight id_;_2753606_;_script infofile_;_ZIP::ssf2.xml_;_
