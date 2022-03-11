@@ -31,6 +31,7 @@ ElseIf b <>  "" Then ' Process by Order Date
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order - Date not found", "Order with Order Date " & b & " does not exist. Exiting..."
+		WpfWindow("Micro Focus MyFlight Sample").WpfButton("BACK").Click
 		ExitAction
 	End If
 ElseIf c <> "" Then ' Process by Passenger Name
@@ -44,6 +45,7 @@ ElseIf c <> "" Then ' Process by Passenger Name
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order - Name not found", "Order with Passenger Name containing " & c & " does not exist. Exiting..."
+		WpfWindow("Micro Focus MyFlight Sample").WpfButton("BACK").Click
 		ExitAction
 	End If	
 End If
