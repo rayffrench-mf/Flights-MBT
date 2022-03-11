@@ -9,6 +9,13 @@ e=Parameter("Tickets")
 f=Parameter("PassengerName")
 g=Parameter("SelectedRow")
 
+If WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Exist Then
+	WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "BOOK FLIGHT"
+Else
+	Reporter.ReportEvent micFail, "Book Flight - BOOK FLIGHT not enabled", "BOOK FLIGHT tab not enabled. Exiting..."
+	ExitAction
+End If
+
 WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("fromCity").Select a @@ hightlight id_;_2135054328_;_script infofile_;_ZIP::ssf4.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("toCity").Select b @@ hightlight id_;_1948026184_;_script infofile_;_ZIP::ssf8.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfCalendar("datePicker").SetDate c @@ hightlight id_;_2135059656_;_script infofile_;_ZIP::ssf10.xml_;_
@@ -30,3 +37,4 @@ Parameter("PassengerNameOut") = f
 Parameter("OrderDateOut") = c
 
 ' Flight app ends on ORDER DETAILS screen with order number showing and NEW SEARCH button available
+

@@ -8,6 +8,9 @@ c=Parameter("PassengerName")
 'Get to BOOK FLIGHT and SEARCH ORDER screen if you aren't already there
 If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (4) Then @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click
+Else
+	Reporter.ReportEvent micFail, "Search Order - NEW SEARCH not found", "NEW SEARCH button not found. Exiting..."
+	ExitAction
 End If
 
 'Select to search for an order
@@ -31,8 +34,7 @@ ElseIf b <>  "" Then ' Process by Order Date
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order - Date not found", "Order with Order Date " & b & " does not exist. Exiting..."
-		WpfWindow("Micro Focus MyFlight Sample").Close
-		ExitTest
+		ExitAction
 	End If
 ElseIf c <> "" Then ' Process by Passenger Name
 	WpfWindow("Micro Focus MyFlight Sample").WpfRadioButton("byNameOrDateRadio").Set @@ hightlight id_;_1918806040_;_script infofile_;_ZIP::ssf30.xml_;_
@@ -45,16 +47,13 @@ ElseIf c <> "" Then ' Process by Passenger Name
 		WpfWindow("Micro Focus MyFlight Sample").WpfButton("SELECT ORDER").Click
 	Else
 		Reporter.ReportEvent micFail, "Search Order - Name not found", "Order with Passenger Name containing " & c & " does not exist. Exiting..."
-		WpfWindow("Micro Focus MyFlight Sample").Close
-		ExitTest
+		ExitAction
 	End If	
 End If
 
 If WpfWindow("Micro Focus MyFlight Sample").Dialog("Error").Exist (2) Then ' This popup occurs only with non-existant order nums @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").Dialog("Error").WinButton("OK").Click
 	Reporter.ReportEvent micFail, "Search Order - Number not found", "Order with Order Number " & a & " does not exist. Exiting..."
-	WpfWindow("Micro Focus MyFlight Sample").Close
-	ExitTest
 End If
  @@ hightlight id_;_853570_;_script infofile_;_ZIP::ssf24.xml_;_
 ' Flight GUI app ends on ORDER DETAILS screen with NEW SEARCH  button and the Trashcan icon available

@@ -16,7 +16,7 @@ If WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").GetROProperty
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click
 Else
 	WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("numOfTicketsCombo").Select 4 ' we set to 2 so 4 should be a different value
-	WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click
+	WpfWindow("Micro Focus MyFlight Sample").WpfButton("updateBtn").Click ' the Check icon should now be enabled
 End  If
 
 Wait 2 ' The Exist statement below seems to find a little box that exists if we run too fast - so the Wait is necessary

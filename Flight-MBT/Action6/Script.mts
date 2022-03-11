@@ -5,7 +5,8 @@ If WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").GetTOProperti
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").Click
 	WpfWindow("Micro Focus MyFlight Sample").Dialog("Notification").WinButton("Yes").Click @@ hightlight id_;_2753606_;_script infofile_;_ZIP::ssf2.xml_;_
 Else
-	ExitTest
+	Reporter.ReportEvent micFail, "Trashcan Order - Trashcan not enabled", "Trashcan icon not enabled. Exiting..."
+	ExitAction
 End  If
 
 Wait 2 ' The Exist statement below seems to find a little box that exists if we run too fast - so the Wait is necessary
