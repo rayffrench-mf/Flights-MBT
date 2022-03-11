@@ -1,7 +1,7 @@
 ﻿' Click the Trashcan icon to delete whatever order has been selected
 'This action must start after a Search Order has been completed.
 
-If WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").GetTOProperties("enabled")  Then @@ hightlight id_;_2058186184_;_script infofile_;_ZIP::ssf1.xml_;_
+If WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").GetROProperties("enabled")  Then @@ hightlight id_;_2058186184_;_script infofile_;_ZIP::ssf1.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").Click
 	WpfWindow("Micro Focus MyFlight Sample").Dialog("Notification").WinButton("Yes").Click @@ hightlight id_;_2753606_;_script infofile_;_ZIP::ssf2.xml_;_
 Else
@@ -15,3 +15,4 @@ If WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderDeletedMessage").Exi
 	WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderDeletedMessage").Output CheckPoint("OrderDeletedNumber") @@ hightlight id_;_2137223792_;_script infofile_;_ZIP::ssf3.xml_;_
 End  If
 ' Flight app ends on BOOK FLIGHT screen with FIND FLIGHTS button available
+

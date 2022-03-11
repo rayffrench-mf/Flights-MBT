@@ -8,9 +8,6 @@ c=Parameter("PassengerName")
 'Get to BOOK FLIGHT and SEARCH ORDER screen if you aren't already there
 If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (4) Then @@ hightlight id_;_2137773064_;_script infofile_;_ZIP::ssf9.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click
-Else
-	Reporter.ReportEvent micFail, "Search Order - NEW SEARCH not found", "NEW SEARCH button not found. Exiting..."
-	ExitAction
 End If
 
 'Select to search for an order
