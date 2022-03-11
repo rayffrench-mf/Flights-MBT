@@ -14,5 +14,6 @@ Wait 2 ' The Exist statement below seems to find a little box that exists if we 
 If WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderDeletedMessage").Exist (4) Then
 	WpfWindow("Micro Focus MyFlight Sample").WpfObject("OrderDeletedMessage").Output CheckPoint("OrderDeletedNumber") @@ hightlight id_;_2137223792_;_script infofile_;_ZIP::ssf3.xml_;_
 End  If
+
 ' Flight app ends on BOOK FLIGHT screen with FIND FLIGHTS button available
 
