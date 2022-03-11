@@ -3,7 +3,7 @@
 'This action needs to start on the ORDER DETAILS screen
 
 ' If we're not on the ORDER DETAILS screen then we failed previously so exit
-If ! WpfWindow("Micro Focus MyFlight Sample").WpfObject("ORDER DETAILS").Exist Then @@ hightlight id_;_1905290200_;_script infofile_;_ZIP::ssf7.xml_;_
+If NOT WpfWindow("Micro Focus MyFlight Sample").WpfObject("ORDER DETAILS").Exist Then @@ hightlight id_;_1905290200_;_script infofile_;_ZIP::ssf7.xml_;_
 	Reporter.ReportEvent micFail, "Trashcan Order - Wrong screen", "Not on ORDER DETAILS screen. Exiting..."
 	ExitAction
 End  If
