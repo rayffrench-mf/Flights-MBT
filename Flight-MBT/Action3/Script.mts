@@ -10,8 +10,13 @@ If WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Exist (4) Th
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("NEW SEARCH").Click
 End If
 
-'Select to search for an order
-WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER"
+' If we're not on the SEARCH ORDER screen then exit
+If WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Exist Then
+	WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "SEARCH ORDER"
+Else
+	Reporter.ReportEvent micFail, "Search Order - Wrong screen", "Not on SEARCH ORDER screen. Exiting..."
+	ExitAction
+End If
 
 ' Only pass in one of these three values - only one should be non-empty
 If a <> "" Then ' Process by Order Number

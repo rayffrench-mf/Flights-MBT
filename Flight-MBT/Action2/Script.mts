@@ -9,10 +9,11 @@ e=Parameter("Tickets")
 f=Parameter("PassengerName")
 g=Parameter("SelectedRow")
 
+' If we're not on the BOOK FLIGHT screen then exit
 If WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Exist Then
 	WpfWindow("Micro Focus MyFlight Sample").WpfTabStrip("WpfTabStrip").Select "BOOK FLIGHT"
 Else
-	Reporter.ReportEvent micFail, "Book Flight - BOOK FLIGHT not enabled", "BOOK FLIGHT tab not enabled. Exiting..."
+	Reporter.ReportEvent micFail, "Book Flight - Wrong screen", "Not on BOOK FLIGHT screen. Exiting..."
 	ExitAction
 End If
 

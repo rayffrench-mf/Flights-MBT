@@ -7,6 +7,12 @@ a=Parameter("Tickets")
 b=Parameter("ClassOfService")
 c=Parameter("PassengerName")
 
+' If we're not on the ORDER DETAILS screen then exit
+If ! WpfWindow("Micro Focus MyFlight Sample").WpfObject("ORDER DETAILS").Exist Then
+	Reporter.ReportEvent micFail, "Change Order - Wrong Screen", "Not on ORDER DETAILS screen. Exiting..."
+	ExitAction
+End  If
+
 WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("numOfTicketsCombo").Select a @@ hightlight id_;_1904552888_;_script infofile_;_ZIP::ssf4.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfComboBox("flightClassCombo").Select b @@ hightlight id_;_1955290176_;_script infofile_;_ZIP::ssf8.xml_;_
 WpfWindow("Micro Focus MyFlight Sample").WpfEdit("passengerName").Set c @@ hightlight id_;_1955294928_;_script infofile_;_ZIP::ssf10.xml_;_
