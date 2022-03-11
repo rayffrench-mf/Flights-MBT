@@ -8,7 +8,7 @@ b=Parameter("ClassOfService")
 c=Parameter("PassengerName")
 
 ' If we're not on the ORDER DETAILS screen then exit
-If ! WpfWindow("Micro Focus MyFlight Sample").WpfObject("ORDER DETAILS").Exist Then
+If NOT WpfWindow("Micro Focus MyFlight Sample").WpfObject("ORDER DETAILS").Exist Then
 	Reporter.ReportEvent micFail, "Change Order - Wrong Screen", "Not on ORDER DETAILS screen. Exiting..."
 	ExitAction
 End  If
