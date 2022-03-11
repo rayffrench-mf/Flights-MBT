@@ -9,7 +9,7 @@ If NOT WpfWindow("Micro Focus MyFlight Sample").WpfObject("ORDER DETAILS").Exist
 End  If
 
 'If the Trashcan icon is not enabled then exit
-If WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").GetROProperties("enabled")  Then @@ hightlight id_;_2058186184_;_script infofile_;_ZIP::ssf1.xml_;_
+If WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").GetROProperty("enabled") = "True" Then @@ hightlight id_;_2058186184_;_script infofile_;_ZIP::ssf1.xml_;_
 	WpfWindow("Micro Focus MyFlight Sample").WpfButton("WpfButton").Click
 	WpfWindow("Micro Focus MyFlight Sample").Dialog("Notification").WinButton("Yes").Click @@ hightlight id_;_2753606_;_script infofile_;_ZIP::ssf2.xml_;_
 Else

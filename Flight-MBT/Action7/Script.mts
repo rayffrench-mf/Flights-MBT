@@ -2,7 +2,7 @@
 ' Once at least one item is changed, the Check icon (update button) is enabled as shown in orange
 ' This action must start on the screen that shows the ORDER DETAILS.
 'Typically that means you must run a SEARCH ORDER action first.
- @@ hightlight id_;_1917507096_;_script infofile_;_ZIP::ssf22.xml_;_
+ 
 a=Parameter("Tickets")
 b=Parameter("ClassOfService")
 c=Parameter("PassengerName")
