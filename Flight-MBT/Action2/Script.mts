@@ -3,7 +3,7 @@
 
 a=Parameter("FlyFrom")
 b=Parameter("FlyTo")
-c=Parameter("OrderDate") ' must use format 15-Mar-2022
+c=Parameter("OrderDate") ' must use format 19-Dec-2022
 d=Parameter("ClassOfService")
 e=Parameter("Tickets")
 f=Parameter("PassengerName")
