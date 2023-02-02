@@ -3,7 +3,7 @@
 
 a=Parameter("FlyFrom")
 b=Parameter("FlyTo")
-c=Parameter("OrderDate") ' must use format 19-Dec-2022
+c=Parameter("OrderDate") ' must use format 19-Dec-202 and ALWAYS must be in the future - see Action Call Properties
 d=Parameter("ClassOfService")
 e=Parameter("Tickets")
 f=Parameter("PassengerName")
