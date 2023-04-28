@@ -1,9 +1,10 @@
 ﻿' Book a flight according to the passed in 7 parameters 
 'This action must start on the post-login screen that shows BOOK FLIGHT and SEARCH ORDER.
+' IMPORTANT - must edit BookFlight properties parameters OrderDate to be in the future
 
 a=Parameter("FlyFrom")
 b=Parameter("FlyTo")
-c=Parameter("OrderDate") ' must use format 19-Dec-202 and ALWAYS must be in the future - see Action Call Properties
+c=Parameter("OrderDate") ' must use format 19-Dec-2023 and ALWAYS must be in the future - see Action Call Properties
 d=Parameter("ClassOfService")
 e=Parameter("Tickets")
 f=Parameter("PassengerName")
