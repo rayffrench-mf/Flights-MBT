@@ -5,7 +5,7 @@ a=Parameter("Username")
 b=Parameter("Password")
 
 'Start the Flight GUI Appolication
-SystemUtil.Run "C:\Program Files (x86)\Micro Focus\UFT One\samples\Flights Application\FlightsGUI.exe"
+SystemUtil.Run "C:\Program Files (x86)\OpenText\UFT One\samples\Flights Application\FlightsGUI.exe"
 
 If WpfWindow("OpenText MyFlight Sample Application").Exist Then
 	WpfWindow("OpenText MyFlight Sample Application").WpfEdit("agentName").Set a @@ hightlight id_;_1950327744_;_script infofile_;_ZIP::ssf2.xml_;_
